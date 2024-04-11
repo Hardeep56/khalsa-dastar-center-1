@@ -1,21 +1,23 @@
 .page-cover {
-    position: relative;
-    height: 400px;
-    background-image: url('./assets/turban logo.png');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .page-cover-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-  }
-  
-  .page-cover-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
+  position: relative;
+  height: 400px;
+  background-image: url('../../assets/turban23.png'); /* Replace with your actual image URL */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: 50%; /* Adjust this value based on the aspect ratio of your image */
+}
+
+.page-cover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.page-cover-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}

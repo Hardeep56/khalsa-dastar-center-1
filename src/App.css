@@ -1,5 +1,9 @@
 .app {
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Full viewport height */
 }
 
 .navbar {
@@ -26,42 +30,36 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .navbar li {
-  display: inline;
   margin-right: 10px;
 }
 
 .navbar a {
   color: #fff;
   text-decoration: none;
+  padding: 5px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background-color: #575757;
+  border-radius: 5px;
 }
 
 .content {
+  flex: 1;
+  /* Takes up the available space */
   margin-top: 80px;
+  /* Adjusted if you have a fixed navbar */
+  padding-bottom: 50px;
+  /* Space for the footer */
 }
 
 .home {
   position: relative;
-}
-
-.slideshow {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  overflow: hidden;
-}
-
-.slideshow img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .home-content {
@@ -76,53 +74,76 @@
   border-radius: 10px;
 }
 
-.home-logo {
-  width: 150px;
-  margin-bottom: 20px;
+/* Additional styles for responsiveness and form elements */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .home-content,
+  .hire-professional {
+    padding: 10px;
+    font-size: smaller;
+  }
 }
 
-.home-content h1 {
-  font-size: 36px;
+/* Form styles */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
-.home-content p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.hire-professional {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 300px;
-}
-
-.hire-professional h2 {
+.social-icons a {
+  color: #fff;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
-.hire-professional p {
-  margin-bottom: 20px;
-}
-
-.services,
-.turbans,
-.about,
-.contact {
-  padding: 20px;
-}
-
-.services ul,
-.turbans ul {
-  margin-left: 20px;
-}
-
-.contact p {
-  margin-bottom: 10px;
+.social-icons a:hover {
+  color: #ff0000;
 }
